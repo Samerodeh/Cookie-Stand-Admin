@@ -108,7 +108,7 @@ function Main(props) {
                                 <tr className="border border-collapse border-gray-900" key={data.ID}>
                                     <td className="border border-collapse border-gray-900"> {data.location} </td>
                                     {data.stands.map(cookie => (<td className="border border-collapse border-gray-900"> {cookie} </td>))}
-                                    <td className="border border-collapse border-gray-900">{data.stands.reduce((acc, curr) => { acc = acc + curr; return acc }, 0)}</td>
+                                    <td className="border border-collapse border-gray-900">{data.stands.reduce((account, current) => { account = account + current; return account }, 0)}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -117,7 +117,7 @@ function Main(props) {
                             <tr className="border border-collapse border-gray-900" key={report.length + 1}>
                                 <th className="border border-collapse border-gray-900"> Totals </th>
                                 {total.map(total => (<th className="border border-collapse border-gray-900"> {total} </th>))}
-                                <th className="border border-collapse border-gray-900"> {total.reduce((acc, curr) => { acc = acc + curr; return acc }, 0)} </th>
+                                <th className="border border-collapse border-gray-900"> {total.reduce((account, current) => { account = account + current; return account }, 0)} </th>
                             </tr>
                         </tfoot>
                     </table>
