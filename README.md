@@ -1,3 +1,5 @@
+# Front End Deployment : https://cookie-stand-admin-28zypcgcr-cookie-stand-admin.vercel.app
+
 # PR LINK LAB 37 : https://github.com/Samerodeh/Cookie-Stand-Admin/pull/1
 
 # PR LINK LAB 38 : https://github.com/Samerodeh/Cookie-Stand-Admin/pull/2
