@@ -4,9 +4,13 @@ import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 import { useState } from 'react'
+import LoginForm from '../components/LoginForm'
+import { useAuth } from '../context/auth'
 
 const CookieStandAdmin = () => {
   const [stores, Stores] = useState('0')
+  const { user, login, logout } = useAuth();
+
   return (
     <div>
 
@@ -16,9 +20,13 @@ const CookieStandAdmin = () => {
 
       <Header />
 
-      <Main Stores = {Stores} />
+      {user ?
+        <Main Stores={Stores} />
+        :
+        <LoginForm login={login} />
+      }
 
-      <Footer stores = {stores} />
+      <Footer stores={stores} />
 
     </div>
   )
