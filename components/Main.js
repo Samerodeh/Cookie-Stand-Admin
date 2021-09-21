@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "tailwindcss/tailwind.css"
 import { hoursOfWork } from '../data'
+import useResource from '../hooks/useResource';
 
 function Main(props) {
     const [location, Location] = useState("");
@@ -9,6 +10,8 @@ function Main(props) {
     const [avg, Average] = useState("");
     const [report, Report] = useState("");
     const [total, Total] = useState("")
+
+    const { resources, loading, createResource, deleteResource } = useResource();
 
     function locationHandler(event) { Location(event.target.value); }
 
@@ -28,15 +31,16 @@ function Main(props) {
         }
 
         for (let i = 0; i < 14; i++) {
-            
+
             const total = Math.floor(Math.random() * ((parseInt(max) - parseInt(min) + 1)) + parseInt(min))
             data.stands.push(total)
-            
+
             for (let j = 0; j < report.length + 1; j++) {
-                
+
                 total += report[j] ? report[j].stands[i] : 1
             }
             result.push(total)
+
         }
 
         Report([...report, data])
@@ -127,4 +131,4 @@ function Main(props) {
     )
 }
 
-export default Main
+export default Main;
